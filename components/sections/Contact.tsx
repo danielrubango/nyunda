@@ -1,9 +1,11 @@
-import { Mail, Linkedin } from "lucide-react";
-import { getContent } from "@/data/content";
+"use client";
 
-const content = getContent("en");
+import { Mail, Linkedin } from "lucide-react";
+import { useLocale } from "@/lib/locale-context";
 
 export function Contact() {
+  const { content } = useLocale();
+
   return (
     <section id="contact" className="py-24 px-6">
       <div className="mx-auto max-w-4xl text-center">

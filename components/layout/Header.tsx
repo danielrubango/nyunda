@@ -1,68 +1,129 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { getContent } from "@/data/content";
-
-const content = getContent("en");
+import Link from "next/link";
+import { Menu, X, Globe } from "lucide-react";
+import { useLocale } from "@/lib/locale-context";
+import { locales, localeNames, Locale } from "@/data/content";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const { locale, setLocale, content } = useLocale();
 
   const navItems = [
-    { href: "#about", label: content.nav.about },
-    { href: "#skills", label: content.nav.skills },
-    { href: "#experience", label: content.nav.experience },
-    { href: "#projects", label: content.nav.projects },
-    { href: "#contact", label: content.nav.contact },
+    { href: "/#about", label: content.nav.about },
+    { href: "/#skills", label: content.nav.skills },
+    { href: "/#experience", label: content.nav.experience },
+    { href: "/projects", label: content.nav.projects, isPage: true },
+    { href: "/blog", label: content.nav.blog, isPage: true },
+    { href: "/#contact", label: content.nav.contact },
   ];
+
+  const handleLangChange = (newLocale: Locale) => {
+    setLocale(newLocale);
+    setLangOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <nav className="mx-auto max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="text-xl font-semibold text-primary transition-colors hover:text-primary-dark"
           >
             DR
-          </a>
+          </Link>
 
           <ul className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="text-sm font-medium text-muted transition-colors hover:text-primary"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {navItems.map((item) =>
+              item.isPage ? (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm font-medium text-muted transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="text-sm font-medium text-muted transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-muted hover:text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
+                aria-label="Change language"
+              >
+                <Globe size={18} />
+                <span className="hidden sm:inline">{localeNames[locale]}</span>
+              </button>
+              {langOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-100 py-1">
+                  {locales.map((loc) => (
+                    <button
+                      key={loc}
+                      onClick={() => handleLangChange(loc)}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                        locale === loc
+                          ? "text-primary bg-primary/5"
+                          : "text-muted hover:text-primary hover:bg-gray-50"
+                      }`}
+                    >
+                      {localeNames[loc]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 text-muted hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {isOpen && (
           <ul className="md:hidden mt-4 pb-4 flex flex-col gap-4 border-t border-gray-100 pt-4">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-sm font-medium text-muted transition-colors hover:text-primary"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {navItems.map((item) =>
+              item.isPage ? (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-sm font-medium text-muted transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-sm font-medium text-muted transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         )}
       </nav>

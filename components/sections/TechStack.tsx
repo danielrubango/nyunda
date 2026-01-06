@@ -1,18 +1,20 @@
-import { getContent } from "@/data/content";
+"use client";
 
-const content = getContent("en");
+import { useLocale } from "@/lib/locale-context";
 
 export function TechStack() {
+  const { content } = useLocale();
+
   return (
     <section id="skills" className="py-24 px-6">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
           {content.techStack.title}
         </h2>
-        <p className="text-lg text-muted mb-12 max-w-2xl">
+        <p className="text-lg text-muted mb-12">
           {content.techStack.intro}
         </p>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {content.techStack.categories.map((category) => (
             <div
               key={category.name}

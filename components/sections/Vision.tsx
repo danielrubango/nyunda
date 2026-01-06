@@ -1,11 +1,13 @@
-import { Lightbulb } from "lucide-react";
-import { getContent } from "@/data/content";
+"use client";
 
-const content = getContent("en");
+import { Lightbulb } from "lucide-react";
+import { useLocale } from "@/lib/locale-context";
 
 export function Vision() {
+  const { content } = useLocale();
+
   return (
-    <section className="py-24 px-6 bg-gray-50">
+    <section className="py-24 px-6">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
           {content.vision.title}

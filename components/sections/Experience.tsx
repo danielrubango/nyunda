@@ -1,9 +1,11 @@
-import { Briefcase } from "lucide-react";
-import { getContent } from "@/data/content";
+"use client";
 
-const content = getContent("en");
+import { Briefcase } from "lucide-react";
+import { useLocale } from "@/lib/locale-context";
 
 export function Experience() {
+  const { content } = useLocale();
+
   return (
     <section id="experience" className="py-24 px-6 bg-gray-50">
       <div className="mx-auto max-w-4xl">

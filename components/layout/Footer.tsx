@@ -1,8 +1,9 @@
-import { getContent } from "@/data/content";
+"use client";
 
-const content = getContent("en");
+import { useLocale } from "@/lib/locale-context";
 
 export function Footer() {
+  const { content } = useLocale();
   const year = new Date().getFullYear();
   const copyrightText = content.footer.copyright.replace("{year}", year.toString());
 

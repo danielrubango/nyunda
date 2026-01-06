@@ -9,6 +9,7 @@ export const en = {
     skills: "Skills",
     experience: "Experience",
     projects: "Projects",
+    blog: "Blog",
     contact: "Contact",
   },
   hero: {
@@ -34,7 +35,7 @@ export const en = {
     categories: [
       {
         name: "Frontend",
-        skills: ["React", "Next.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+        skills: ["React", "Next.js", "Angular", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
       },
       {
         name: "Backend",
@@ -42,11 +43,15 @@ export const en = {
       },
       {
         name: "Databases",
-        skills: ["MySQL"],
+        skills: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "SQL Server"],
       },
       {
         name: "Tools & DevOps",
-        skills: ["Git", "GitHub", "Vercel", "REST APIs"],
+        skills: ["Git", "GitHub", "GitLab", "Bitbucket", "Vercel", "CI/CD", "REST APIs"],
+      },
+      {
+        name: "Project Management",
+        skills: ["Jira", "Trello", "Agile/Scrum", "End-to-End Delivery"],
       },
       {
         name: "IT & Systems",
@@ -63,6 +68,13 @@ export const en = {
     title: "Featured Work",
     status:
       "A selection of full stack applications and technical work reflecting my focus on clean architecture and functional design. This section is currently being updated to feature my latest engineering projects.",
+    viewAll: "View all projects",
+  },
+  blog: {
+    title: "Blog",
+    status:
+      "Articles are currently being prepared and will be published soon. Check back regularly to discover my thoughts on software development, architecture, and best practices.",
+    viewAll: "View all articles",
   },
   vision: {
     title: "Vision & Continuous Learning",
@@ -81,5 +93,8 @@ export const en = {
   },
   footer: {
     copyright: "© {year} Daniel Rubango. All rights reserved.",
+  },
+  languageSwitcher: {
+    label: "Language",
   },
 };

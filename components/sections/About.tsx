@@ -1,8 +1,10 @@
-import { getContent } from "@/data/content";
+"use client";
 
-const content = getContent("en");
+import { useLocale } from "@/lib/locale-context";
 
 export function About() {
+  const { content } = useLocale();
+
   return (
     <section id="about" className="py-24 px-6 bg-gray-50">
       <div className="mx-auto max-w-4xl">
