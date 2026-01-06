@@ -35,11 +35,11 @@ export const en = {
     categories: [
       {
         name: "Frontend",
-        skills: ["React", "Next.js", "Angular", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+        skills: ["React", "Next.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"],
       },
       {
         name: "Backend",
-        skills: ["Node.js", "Express.js", "PHP"],
+        skills: ["Node.js", "Express.js", "PHP", "Laravel"],
       },
       {
         name: "Databases",

@@ -8,7 +8,7 @@ export function Hero() {
   const { content } = useLocale();
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20 bg-gradient-to-br from-white via-secondary/10 to-cream/30">
+    <section className="min-h-screen flex items-center justify-center px-6 pt-20 bg-gradient-to-br from-primary/10 via-secondary/20 to-cream/50">
       <div className="mx-auto max-w-4xl text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground">
           {content.hero.headline}
