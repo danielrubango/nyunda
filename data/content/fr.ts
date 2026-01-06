@@ -15,8 +15,9 @@ export const fr = {
   hero: {
     title: "Ingénieur Logiciel Full Stack",
     headline: "Créer des produits numériques fiables.",
-    subtitle:
-      "Je crée des applications web performantes, maintenables et conçues pour durer.",
+    subtitlePrefix: "Je m'appelle ",
+    subtitleName: "Daniel Rubango",
+    subtitleSuffix: ". Je crée des applications web performantes, maintenables et conçues pour durer.",
     cta: {
       projects: "Voir les projets",
       contact: "Me contacter",

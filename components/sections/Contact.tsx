@@ -7,7 +7,7 @@ export function Contact() {
   const { content } = useLocale();
 
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-24 px-6 bg-gray-50 border-t border-gray-200">
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
           {content.contact.title}

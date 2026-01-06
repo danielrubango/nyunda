@@ -15,8 +15,9 @@ export const en = {
   hero: {
     title: "Full Stack Software Engineer",
     headline: "Building reliable digital products.",
-    subtitle:
-      "I create web applications that are performant, maintainable, and built to last.",
+    subtitlePrefix: "My name is ",
+    subtitleName: "Daniel Rubango",
+    subtitleSuffix: ". I create web applications that are performant, maintainable, and built to last.",
     cta: {
       projects: "View Projects",
       contact: "Get in Touch",

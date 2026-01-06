@@ -42,7 +42,7 @@ export function Header() {
             href="/"
             className="text-xl font-semibold text-primary transition-colors hover:text-primary-dark"
           >
-            DR
+            NYUNDA.DEV
           </Link>
 
           <ul className="hidden md:flex items-center gap-8">
@@ -51,7 +51,7 @@ export function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`text-sm font-medium transition-colors hover:text-primary ${
+                    className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-primary ${
                       isActive(item) ? "text-primary" : "text-muted"
                     }`}
                   >
@@ -62,7 +62,7 @@ export function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className={`text-sm font-medium transition-colors hover:text-primary ${
+                    className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-primary ${
                       isActive(item) ? "text-primary" : "text-muted"
                     }`}
                   >
@@ -120,7 +120,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block text-sm font-medium transition-colors hover:text-primary ${
+                    className={`block text-sm font-medium uppercase tracking-wide transition-colors hover:text-primary ${
                       isActive(item) ? "text-primary" : "text-muted"
                     }`}
                   >
@@ -132,7 +132,7 @@ export function Header() {
                   <a
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block text-sm font-medium transition-colors hover:text-primary ${
+                    className={`block text-sm font-medium uppercase tracking-wide transition-colors hover:text-primary ${
                       isActive(item) ? "text-primary" : "text-muted"
                     }`}
                   >

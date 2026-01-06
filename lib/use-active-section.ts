@@ -15,6 +15,13 @@ export function useActiveSection() {
     }
 
     const scrollPosition = window.scrollY + 100;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // If near bottom of page, activate contact section
+    if (window.scrollY + windowHeight >= documentHeight - 50) {
+      return "contact";
+    }
 
     for (const id of sectionIds) {
       const element = document.getElementById(id);

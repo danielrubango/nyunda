@@ -33,7 +33,9 @@ export function Hero() {
           {content.hero.headline}
         </p>
         <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
-          {content.hero.subtitle}
+          {content.hero.subtitlePrefix}
+          <span className="font-semibold text-foreground">{content.hero.subtitleName}</span>
+          {content.hero.subtitleSuffix}
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
