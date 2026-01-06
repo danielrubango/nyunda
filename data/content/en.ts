@@ -48,7 +48,7 @@ export const en = {
       },
       {
         name: "Tools & DevOps",
-        skills: ["Git", "GitHub", "GitLab", "Bitbucket", "Vercel", "CI/CD", "REST APIs"],
+        skills: ["Git", "GitHub", "GitLab", "Bitbucket", "Vercel"],
       },
       {
         name: "Project Management",

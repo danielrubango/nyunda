@@ -4,21 +4,30 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Globe } from "lucide-react";
 import { useLocale } from "@/lib/locale-context";
+import { useActiveSection } from "@/lib/use-active-section";
 import { locales, localeNames, Locale } from "@/data/content";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const { locale, setLocale, content } = useLocale();
+  const { activeSection, pathname } = useActiveSection();
 
   const navItems = [
-    { href: "/#about", label: content.nav.about },
-    { href: "/#skills", label: content.nav.skills },
-    { href: "/#experience", label: content.nav.experience },
+    { href: "/#about", label: content.nav.about, sectionId: "about" },
+    { href: "/#skills", label: content.nav.skills, sectionId: "skills" },
+    { href: "/#experience", label: content.nav.experience, sectionId: "experience" },
     { href: "/projects", label: content.nav.projects, isPage: true },
     { href: "/blog", label: content.nav.blog, isPage: true },
-    { href: "/#contact", label: content.nav.contact },
+    { href: "/#contact", label: content.nav.contact, sectionId: "contact" },
   ];
+
+  const isActive = (item: typeof navItems[0]) => {
+    if (item.isPage) {
+      return pathname === item.href;
+    }
+    return item.sectionId === activeSection;
+  };
 
   const handleLangChange = (newLocale: Locale) => {
     setLocale(newLocale);
@@ -42,7 +51,9 @@ export function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm font-medium text-muted transition-colors hover:text-primary"
+                    className={`text-sm font-medium transition-colors hover:text-primary ${
+                      isActive(item) ? "text-primary" : "text-muted"
+                    }`}
                   >
                     {item.label}
                   </Link>
@@ -51,7 +62,9 @@ export function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-sm font-medium text-muted transition-colors hover:text-primary"
+                    className={`text-sm font-medium transition-colors hover:text-primary ${
+                      isActive(item) ? "text-primary" : "text-muted"
+                    }`}
                   >
                     {item.label}
                   </a>
@@ -107,7 +120,9 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block text-sm font-medium text-muted transition-colors hover:text-primary"
+                    className={`block text-sm font-medium transition-colors hover:text-primary ${
+                      isActive(item) ? "text-primary" : "text-muted"
+                    }`}
                   >
                     {item.label}
                   </Link>
@@ -117,7 +132,9 @@ export function Header() {
                   <a
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block text-sm font-medium text-muted transition-colors hover:text-primary"
+                    className={`block text-sm font-medium transition-colors hover:text-primary ${
+                      isActive(item) ? "text-primary" : "text-muted"
+                    }`}
                   >
                     {item.label}
                   </a>
