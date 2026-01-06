@@ -10,10 +10,29 @@ export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-20 bg-gradient-to-br from-primary/10 via-secondary/20 to-cream/50">
       <div className="mx-auto max-w-4xl text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground">
+        <div className="inline-block mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-primary">
+            {content.hero.title}
+          </h1>
+          <svg
+            className="w-full h-3 mt-2"
+            viewBox="0 0 200 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 8C50 2 150 2 198 8"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              className="text-accent"
+            />
+          </svg>
+        </div>
+        <p className="text-2xl md:text-3xl font-medium text-foreground mb-4">
           {content.hero.headline}
-        </h1>
-        <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        </p>
+        <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
           {content.hero.subtitle}
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

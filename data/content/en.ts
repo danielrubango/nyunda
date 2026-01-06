@@ -13,9 +13,10 @@ export const en = {
     contact: "Contact",
   },
   hero: {
-    headline: "Full Stack Software Engineer with a foundation in systems reliability.",
+    title: "Full Stack Software Engineer",
+    headline: "Building reliable digital products.",
     subtitle:
-      "I build performant, maintainable web applications by combining modern frontend and backend development with a deep understanding of infrastructure and user needs.",
+      "I create web applications that are performant, maintainable, and built to last.",
     cta: {
       projects: "View Projects",
       contact: "Get in Touch",
@@ -24,7 +25,7 @@ export const en = {
   about: {
     title: "About Me",
     paragraphs: [
-      "I am a Full Stack Software Engineer with over six years of experience across the technical spectrum, from systems management to application development. My journey began in software engineering, followed by several years specialized in IT support and systems administration at organizations like Watchtower. This path gave me a unique perspective on the entire lifecycle of a product: I don't just write code; I understand how it lives, scales, and fails in production environments.",
+      "I am a Full Stack Software Engineer with over six years of experience across the technical spectrum, from systems management to application development. My journey began in software engineering, followed by several years specialized in IT support and systems administration. This path gave me a unique perspective on the entire lifecycle of a product: I don't just write code; I understand how it lives, scales, and fails in production environments.",
       "With a degree in Mathematics and Computer Science, I bridge the gap between theoretical architecture and practical implementation. Today, I focus on building digital products that are as reliable as they are functional. My background in systems allows me to approach development with a focus on stability and performance, ensuring that the solutions I build solve real business problems while remaining sustainable for the long term.",
     ],
   },

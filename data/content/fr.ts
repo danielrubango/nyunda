@@ -13,9 +13,10 @@ export const fr = {
     contact: "Contact",
   },
   hero: {
-    headline: "Ingénieur Logiciel Full Stack avec une base solide en fiabilité des systèmes.",
+    title: "Ingénieur Logiciel Full Stack",
+    headline: "Créer des produits numériques fiables.",
     subtitle:
-      "Je développe des applications web performantes et maintenables en combinant le développement frontend et backend moderne avec une compréhension approfondie de l'infrastructure et des besoins utilisateurs.",
+      "Je crée des applications web performantes, maintenables et conçues pour durer.",
     cta: {
       projects: "Voir les projets",
       contact: "Me contacter",
@@ -24,7 +25,7 @@ export const fr = {
   about: {
     title: "À propos de moi",
     paragraphs: [
-      "Je suis un Ingénieur Logiciel Full Stack avec plus de six ans d'expérience à travers le spectre technique, de la gestion des systèmes au développement d'applications. Mon parcours a commencé dans l'ingénierie logicielle, suivi de plusieurs années de spécialisation dans le support informatique et l'administration des systèmes dans des organisations comme Watchtower. Ce parcours m'a donné une perspective unique sur le cycle de vie complet d'un produit : je ne fais pas que coder ; je comprends comment le code vit, évolue et échoue dans les environnements de production.",
+      "Je suis un Ingénieur Logiciel Full Stack avec plus de six ans d'expérience à travers le spectre technique, de la gestion des systèmes au développement d'applications. Mon parcours a commencé dans l'ingénierie logicielle, suivi de plusieurs années de spécialisation dans le support informatique et l'administration des systèmes. Ce parcours m'a donné une perspective unique sur le cycle de vie complet d'un produit : je ne fais pas que coder ; je comprends comment le code vit, évolue et échoue dans les environnements de production.",
       "Avec un diplôme en Mathématiques et Informatique, je fais le pont entre l'architecture théorique et l'implémentation pratique. Aujourd'hui, je me concentre sur la création de produits numériques aussi fiables que fonctionnels. Mon expérience en systèmes me permet d'aborder le développement avec un focus sur la stabilité et la performance, garantissant que les solutions que je construis résolvent de vrais problèmes métier tout en restant durables à long terme.",
     ],
   },
